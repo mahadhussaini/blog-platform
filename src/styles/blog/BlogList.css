@@ -1,0 +1,34 @@
+/* src/styles/blog/BlogList.css */
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-preview {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-preview h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.blog-preview p {
+  margin: 0 0 10px;
+  font-size: 1em;
+}
+
+.blog-preview a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.blog-preview a:hover {
+  text-decoration: underline;
+}

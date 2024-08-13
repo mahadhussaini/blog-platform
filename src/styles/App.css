@@ -1,0 +1,39 @@
+/* Global Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container that holds the entire content */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the body takes full height of the viewport */
+}
+
+/* Main content area takes up remaining space */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Container styles */
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 70%;
+  }
+}

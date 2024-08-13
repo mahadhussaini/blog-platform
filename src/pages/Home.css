@@ -1,0 +1,59 @@
+/* src/styles/Home.css */
+
+.home {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+.home h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Ensure the BlogList has some margin from the header */
+.blog-list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-preview {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog-preview h2 {
+  margin: 0 0 10px;
+  font-size: 1.8em;
+}
+
+.blog-preview p {
+  margin: 0 0 15px;
+  color: #666;
+}
+
+.blog-preview a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-preview a:hover {
+  text-decoration: underline;
+}
