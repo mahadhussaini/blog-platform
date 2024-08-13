@@ -22,12 +22,7 @@ const EditProfile = () => {
     setError("");
 
     try {
-      // Replace this with your API call or update logic
-      // For example: await api.updateUserProfile({ username, email });
-
-      // Simulating a successful update
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       alert("Profile updated successfully!");
     } catch (err) {
       setError("Failed to update profile. Please try again.");
@@ -40,13 +35,6 @@ const EditProfile = () => {
     <div className="edit-profile">
       <h2>Edit Profile</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Username"
-          required
-        />
         <input
           type="email"
           value={email}

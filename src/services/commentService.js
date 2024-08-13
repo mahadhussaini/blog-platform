@@ -1,12 +1,5 @@
-const API_URL = "https://api.example.com/comments"; // Replace with your actual API URL
+const API_URL = "https://api.example.com/comments";
 
-/**
- * Adds a comment to a specific post.
- *
- * @param {string} postId - The ID of the post to add the comment to.
- * @param {string} content - The content of the comment.
- * @returns {Promise<Object>} The added comment.
- */
 export const addComment = async (postId, content) => {
   try {
     const response = await fetch(`${API_URL}`, {
@@ -32,12 +25,6 @@ export const addComment = async (postId, content) => {
   }
 };
 
-/**
- * Fetches comments for a specific post.
- *
- * @param {string} postId - The ID of the post to fetch comments for.
- * @returns {Promise<Array>} The list of comments.
- */
 export const getCommentsByPostId = async (postId) => {
   try {
     const response = await fetch(`${API_URL}?postId=${postId}`);

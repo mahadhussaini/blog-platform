@@ -1,18 +1,22 @@
-// src/pages/auth/SignupPage.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/auth/Signup.css";
+import "../../styles/auth/SignupPage.css";
 
 const SignupPage = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Assume signup logic here
-    // On successful signup:
+    setError("");
+
+    if (!username || !email || !password) {
+      setError("All fields are required.");
+      return;
+    }
     navigate("/login");
   };
 
@@ -20,6 +24,7 @@ const SignupPage = () => {
     <div className="signup">
       <h2>Signup</h2>
       <form onSubmit={handleSubmit}>
+        {error && <p className="error">{error}</p>}
         <input
           type="text"
           value={username}

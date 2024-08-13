@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import "../../styles/layout/Header.css";
@@ -6,6 +6,7 @@ import "../../styles/layout/Header.css";
 const Header = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = async () => {
     try {
@@ -16,11 +17,18 @@ const Header = () => {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <div className="container">
         <h1 className="logo">Bloggify</h1>
-        <nav className="nav">
+        <button className="menu-toggle" onClick={toggleMenu}>
+          <span className="sr-only"></span>☰
+        </button>
+        <nav className={`nav ${isMenuOpen ? "nav-open" : ""}`}>
           <ul>
             <li>
               <Link to="/">Home</Link>

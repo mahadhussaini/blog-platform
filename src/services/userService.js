@@ -1,6 +1,4 @@
-// src/services/userService.js
-
-const API_URL = "https://api.example.com/users"; // Replace with your actual API URL
+const API_URL = "https://api.example.com/users";
 
 export const login = async (credentials) => {
   try {

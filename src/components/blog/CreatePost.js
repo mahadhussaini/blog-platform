@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/blog/CreatePost.css"; // Ensure the correct path
+import "../../styles/blog/CreatePost.css";
 
 const CreatePostPage = () => {
   const [title, setTitle] = useState("");
@@ -10,8 +10,8 @@ const CreatePostPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your API call
-      const response = await fetch("https://api.example.com/posts", {
+      const response = await fetch("http://localhost:5000/posts", {
+        // Replace with your actual backend URL
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ const CreatePostPage = () => {
       if (!response.ok) throw new Error("Failed to create post");
 
       alert("Post created successfully!");
-      navigate("/"); // Redirect to Home after successful creation
+      navigate("/"); // Redirect to home or fetch the latest posts
     } catch (error) {
       console.error("Error creating post:", error);
       alert("Error creating post.");

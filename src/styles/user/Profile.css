@@ -1,5 +1,3 @@
-/* src/styles/user/Profile.css */
-
 .profile {
   max-width: 600px;
   margin: 50px auto;
@@ -14,6 +12,11 @@
   margin-bottom: 20px;
   font-size: 2em;
   text-align: center;
+}
+
+.profile-info {
+  text-align: center; /* Center-align the text and input */
+  margin: 20px; /* Optional: Add some margin for spacing */
 }
 
 .profile-info p {

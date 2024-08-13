@@ -5,9 +5,7 @@ const BlogPost = ({ post }) => {
   return (
     <div className="blog-post">
       <h1>{post.title}</h1>
-      <div className="blog-post-content">
-        <p>{post.content}</p>
-      </div>
+      <p>{post.content}</p>
     </div>
   );
 };

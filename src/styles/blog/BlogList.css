@@ -1,9 +1,9 @@
-/* src/styles/blog/BlogList.css */
-
 .blog-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in element width */
 }
 
 .blog-preview {
@@ -12,6 +12,7 @@
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Needed for positioning the delete button */
 }
 
 .blog-preview h2 {
@@ -31,4 +32,57 @@
 
 .blog-preview a:hover {
   text-decoration: underline;
+}
+
+.blog-preview .edit-link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #28a745; /* Green color for edit link */
+  text-decoration: none;
+}
+
+.blog-preview .edit-link:hover {
+  text-decoration: underline;
+}
+
+.blog-preview .delete-button {
+  position: absolute; /* Position button in the top right corner */
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: #ff4d4d; /* Red color for delete button */
+  color: #fff;
+  padding: 6px 10px; /* Smaller padding for a smaller button */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8em; /* Smaller font size */
+  line-height: 1; /* Adjust line height to match button size */
+}
+
+.blog-preview .delete-button:hover {
+  background-color: #e03e3e; /* Darker red on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .blog-preview {
+    padding: 15px;
+    position: relative; /* Remove absolute positioning on smaller screens */
+  }
+
+  .blog-preview h2 {
+    font-size: 1.2em;
+  }
+
+  .blog-preview p {
+    font-size: 0.9em;
+  }
+
+  .blog-preview .delete-button {
+    font-size: 0.7em;
+    padding: 5px 10px; /* Adjust padding for smaller screens */
+    position: static; /* Remove absolute positioning on smaller screens */
+    margin-top: 1px;
+    margin-left: 90px; /* Add margin to push button to the bottom */
+  }
 }

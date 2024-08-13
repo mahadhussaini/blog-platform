@@ -1,6 +1,4 @@
-// src/services/postService.js
-
-const API_URL = "https://api.example.com/posts"; // Replace with your actual API URL
+const API_URL = "https://api.example.com/posts";
 
 export const getPosts = async () => {
   try {

@@ -14,13 +14,13 @@ const Post = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const postResponse = await fetch(`https://api.example.com/posts/${id}`);
+        const postResponse = await fetch(`http://localhost:5000/posts/${id}`);
         if (!postResponse.ok) throw new Error("Post not found");
         const postData = await postResponse.json();
         setPost(postData);
 
         const commentsResponse = await fetch(
-          `https://api.example.com/comments?postId=${id}`
+          `http://localhost:5000/comments?postId=${id}`
         );
         if (!commentsResponse.ok) throw new Error("Comments not found");
         const commentsData = await commentsResponse.json();
@@ -37,7 +37,7 @@ const Post = () => {
 
   const handleAddComment = async (content) => {
     try {
-      const response = await fetch(`https://api.example.com/comments`, {
+      const response = await fetch(`http://localhost:5000/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

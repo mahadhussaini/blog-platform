@@ -1,5 +1,3 @@
-// Example of integrating CreatePost in a route
-
 import React from "react";
 import CreatePost from "../../components/blog/CreatePost";
 

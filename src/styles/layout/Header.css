@@ -4,6 +4,7 @@
   padding: 10px 0;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .container {
@@ -19,6 +20,11 @@
 .logo {
   font-size: 1.8em;
   font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav ul {
@@ -53,13 +59,66 @@
   color: #ddd;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.nav-open {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    z-index: 1;
+  }
+
+  .nav.nav-open {
+    display: flex;
+  }
+
   .nav ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .nav ul li {
     margin: 5px 0;
+    width: 100%;
+  }
+
+  .nav ul li a,
+  .nav ul li button {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #444;
+  }
+
+  .nav ul li:last-child a,
+  .nav ul li:last-child button {
+    border-bottom: 1px solid #444;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }

@@ -1,4 +1,3 @@
-// src/pages/user/ProfilePage.js
 import React from "react";
 import Profile from "../../components/user/Profile";
 import "../../styles/user/Profile.css";
