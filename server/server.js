@@ -70,6 +70,12 @@ let posts = [
   },
 ];
 
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .send("Welcome to the Blog API. Available routes: /posts, /comments");
+});
+
 app.get("/posts", (req, res) => {
   res.status(200).json(posts);
 });
