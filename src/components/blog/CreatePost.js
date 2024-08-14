@@ -1,37 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../styles/blog/CreatePost.css";
+import { usePosts } from "../../contexts/PostContext ";
 
 const CreatePostPage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
+  const { addPost, error } = usePosts();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!title.trim() || !content.trim()) {
+      alert("Please fill in both title and content.");
+      return;
+    }
+
+    const newPost = {
+      title,
+      content,
+    };
+
     try {
-      const response = await fetch("http://localhost:5000/posts", {
-        // Replace with your actual backend URL
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title, content }),
-      });
-
-      if (!response.ok) throw new Error("Failed to create post");
-
-      alert("Post created successfully!");
-      navigate("/"); // Redirect to home or fetch the latest posts
+      await addPost(newPost);
+      navigate("/");
     } catch (error) {
       console.error("Error creating post:", error);
-      alert("Error creating post.");
     }
   };
 
   return (
     <div className="create-post">
       <h2>Create New Post</h2>
+      {error && <p className="error-message">{error}</p>}{" "}
       <form onSubmit={handleSubmit}>
         <input
           type="text"

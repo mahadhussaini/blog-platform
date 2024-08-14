@@ -67,7 +67,7 @@
 @media (max-width: 768px) {
   .blog-preview {
     padding: 15px;
-    position: relative; /* Remove absolute positioning on smaller screens */
+    position: relative;
   }
 
   .blog-preview h2 {
@@ -80,9 +80,9 @@
 
   .blog-preview .delete-button {
     font-size: 0.7em;
-    padding: 5px 10px; /* Adjust padding for smaller screens */
-    position: static; /* Remove absolute positioning on smaller screens */
+    padding: 5px 10px;
+    position: static;
     margin-top: 1px;
-    margin-left: 90px; /* Add margin to push button to the bottom */
+    margin-left: 90px;
   }
 }

@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import "../../styles/blog/Comments.css";
 
-const Comments = ({ comments, onAddComment }) => {
+const Comments = ({ comments, onAddComment, error }) => {
   const [newComment, setNewComment] = useState("");
 
-  const handleAddComment = (e) => {
+  const handleAddComment = async (e) => {
     e.preventDefault();
     if (newComment.trim()) {
-      onAddComment(newComment);
-      setNewComment("");
+      try {
+        await onAddComment(newComment);
+        setNewComment("");
+      } catch (error) {
+        console.error("Error adding comment:", error);
+      }
     }
   };
 
   return (
     <div className="comments">
       <h3>Comments</h3>
+      {error && <p className="error-message">{error}</p>}{" "}
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>{comment.content}</li>

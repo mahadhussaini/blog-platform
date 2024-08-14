@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App"; // Ensure this import is correct
-import { AuthProvider } from "./contexts/AuthContext";
+import App from "./App";
+import { PostProvider } from "./contexts/PostContext ";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
+    <PostProvider>
       <App />
-    </AuthProvider>
+    </PostProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
